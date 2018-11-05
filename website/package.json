@@ -7,7 +7,8 @@
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
-    "publish-github": "cross-env GIT_USER=jigang-duan yarn run publish-gh-pages"
+    "publish-github": "cross-env GIT_USER=jigang-duan yarn run publish-gh-pages",
+	"publish-github-fengli": "cross-env GIT_USER=fenglipk yarn run publish-gh-pages"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
