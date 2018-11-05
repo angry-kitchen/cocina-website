@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>卡片 · Cocina</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Card 卡片"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="卡片 · Cocina"/><meta property="og:type" content="website"/><meta property="og:url" content="https://angry-kitchen.github.io/cocina-website/index.html"/><meta property="og:description" content="## Card 卡片"/><meta property="og:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><link rel="shortcut icon" href="/cocina-website/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://angry-kitchen.github.io/cocina-website/blog/atom.xml" title="Cocina Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://angry-kitchen.github.io/cocina-website/blog/feed.xml" title="Cocina Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cocina-website/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cocina-website/"><img class="logo" src="/cocina-website/img/docusaurus.svg" alt="Cocina"/><h2 class="headerTitleWithLogo">Cocina</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/cocina-website/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/cocina-website/docs/component" target="_self">UI组件</a></li><li class=""><a href="/cocina-website/docs/doc4" target="_self">API</a></li><li class=""><a href="/cocina-website/help" target="_self">Help</a></li><li class=""><a href="/cocina-website/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>组件</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">起步</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component">集合</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">组件</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Anatomy">结构</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Accordion">手风琴</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/ActionSheet">浮动弹层</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Badge">角标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Button">按钮</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cocina-website/docs/component/Card">卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Checkbox">复选框</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DatePicker">日期选择</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DeckSwiper">滑动的卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FAB">浮动按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FooterTabs">底部选项卡</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Form">表单</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Header">顶部栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Icon">图标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/List">列表</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Picker">选择器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Radio">单选</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/SearchBar">搜索栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Segment">分段器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Spinner">加载器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Thumbnail">缩略图</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Toast">吐司</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Typography">标题大小</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Drawer">抽屉滑动</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Ref">关联组件</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">卡片</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="card-卡片"></a><a href="#card-卡片" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Card 卡片</h2>
+<p>Card是一个灵活且可扩展的内容容器。它包括页眉和页脚选项，各种内容，上下文背景颜色和强大的显示选项。</p>
+<p><strong>Card属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>transparent</td><td>-</td><td>-</td><td>Removes card shadow from iOS and elevation from android</td></tr>
+<tr><td>dataArray</td><td>Array</td><td>user-defined array</td><td>Array of data chunks to render iteratively.</td></tr>
+<tr><td>renderRow</td><td>Function</td><td>-</td><td>Callback which takes a chunk of data from dataArray and returns as a component.</td></tr>
+</tbody>
+</table>
+<p><strong>CardItem属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>header</td><td>-</td><td>-</td><td>Displays text as header for cards</td></tr>
+<tr><td>cardBody</td><td>-</td><td>-</td><td>Defines section for body of card. The child components are rendered with proper spacing and alignment.</td></tr>
+<tr><td>footer</td><td>-</td><td>-</td><td>Displays text as footer for cards</td></tr>
+<tr><td>button</td><td>-</td><td>-</td><td>To navigate on click of a card item.</td></tr>
+<tr><td>bordered</td><td>false</td><td>boolean</td><td>Adds border to the cardItems</td></tr>
+<tr><td>first</td><td>-</td><td>-</td><td>First CardItem, use in case of custom Card BorderRadius</td></tr>
+<tr><td>last</td><td>-</td><td>-</td><td>Last CardItem, use in case of custom Card BorderRadius</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="card-头部-and-尾部"></a><a href="#card-头部-and-尾部" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Card 头部 and 尾部</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-header-and-footer.png" width=256 height=500 /></p>
+<blockquote>
+<p>要在卡中添加可选的页眉和/或页脚，请在header/中添加/ footerprop CardItem。
+卡头：header在卡内包含CardItem第一个实例的道具。
+卡片页脚：footer在卡片中包含最后一个CardItem实例的道具。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Text, Body } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardHeaderFooterExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">header</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>NativeBase<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>
+                  //Your text here
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">footer</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>GeekyAnts<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="carditem边框"></a><a href="#carditem边框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CardItem边框</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-bordered.png" width=256 height=500 /></p>
+<blockquote>
+<p>包含bordered<CardItem>的道具，以便为卡片项目设置borderBottom。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Text, Body } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardItemBordered</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span> <span class="hljs-attr">padder</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">header</span> <span class="hljs-attr">bordered</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>NativeBase<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">bordered</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>
+                  NativeBase is a free and open source framework that enable
+                  developers to build
+                  high-quality mobile apps using React Native iOS and Android
+                  apps
+                  with a fusion of ES6.
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">footer</span> <span class="hljs-attr">bordered</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>GeekyAnts<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="carditem按钮"></a><a href="#carditem按钮" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CardItem按钮</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-button.gif" width=256 height=500 /></p>
+<blockquote>
+<p>button使用<CardItem> 包含prop以使用卡项目实现onClick功能。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Text, Body } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardItemButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span> <span class="hljs-attr">padder</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">header</span> <span class="hljs-attr">button</span> <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> alert("This is Card Header")}&gt;
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>NativeBase<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">button</span> <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> alert("This is Card Body")}&gt;
+              <span class="hljs-tag">&lt;<span class="hljs-name">Body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>
+                  Click on any carditem
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span> <span class="hljs-attr">footer</span> <span class="hljs-attr">button</span> <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> alert("This is Card Footer")}&gt;
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>GeekyAnts<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="透明卡"></a><a href="#透明卡" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>透明卡</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-transparent.png" width=256 height=500 /></p>
+<blockquote>
+<p>可以使用transparent带有<CardItem>的道具创建透明卡。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Text, Body } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardTransparentExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span> <span class="hljs-attr">padder</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Card</span> <span class="hljs-attr">transparent</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">CardItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>
+                  This is just a transparent card with some text to boot.
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">CardItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="卡片列表"></a><a href="#卡片列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>卡片列表</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-list.png" width=256 height=500 /></p>
+<blockquote>
+<p>CardItem随后包括在内Card创建一张带有列表的卡片。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Text, Icon, Right } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardListExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Card&gt;
+            &lt;CardItem&gt;
+              &lt;Icon active name="logo-googleplus" /&gt;
+              &lt;Text&gt;Google Plus&lt;/Text&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+             &lt;/CardItem&gt;
+           &lt;/Card&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="卡片图片"></a><a href="#卡片图片" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>卡片图片</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-image.png" width=256 height=500 /></p>
+<blockquote>
+<p>想要通过卡片列表获得更多信息吗？
+包括与图像CardItem内Card以及一些文本之前和之后的图像来创建列表卡。
+这是你的卡片图像准备好了！</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Image } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardImageExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Card&gt;
+            &lt;CardItem&gt;
+              &lt;Left&gt;
+                &lt;Thumbnail source={{uri: 'Image URL'}} /&gt;
+                &lt;Body&gt;
+                  &lt;Text&gt;NativeBase&lt;/Text&gt;
+                  &lt;Text note&gt;GeekyAnts&lt;/Text&gt;
+                &lt;/Body&gt;
+              &lt;/Left&gt;
+            &lt;/CardItem&gt;
+            &lt;CardItem cardBody&gt;
+              &lt;Image source={{uri: 'Image URL'}} style={{height: 200, width: null, flex: 1}}/&gt;
+            &lt;/CardItem&gt;
+            &lt;CardItem&gt;
+              &lt;Left&gt;
+                &lt;Button transparent&gt;
+                  &lt;Icon active name="thumbs-up" /&gt;
+                  &lt;Text&gt;12 Likes&lt;/Text&gt;
+                &lt;/Button&gt;
+              &lt;/Left&gt;
+              &lt;Body&gt;
+                &lt;Button transparent&gt;
+                  &lt;Icon active name="chatbubbles" /&gt;
+                  &lt;Text&gt;4 Comments&lt;/Text&gt;
+                &lt;/Button&gt;
+              &lt;/Body&gt;
+              &lt;Right&gt;
+                &lt;Text&gt;11h ago&lt;/Text&gt;
+              &lt;/Right&gt;
+            &lt;/CardItem&gt;
+          &lt;/Card&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="卡展示"></a><a href="#卡展示" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>卡展示</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/card-showcase.png" width=256 height=500 /></p>
+<blockquote>
+<p>Card Showcase是Card Image的进一步定制。它使用了几个不同的项目。
+从卡列表组件开始，类似于我们的列表头像。
+使用Left，Body和Right组件来对齐Card标头的内容。
+要将Image与单个CardItem中的其他NativeBase组件混合，请在Body组件中包含内容。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Image } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardShowcaseExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Card style={{flex: 0}}&gt;
+            &lt;CardItem&gt;
+              &lt;Left&gt;
+                &lt;Thumbnail source={{uri: 'Image URL'}} /&gt;
+                &lt;Body&gt;
+                  &lt;Text&gt;NativeBase&lt;/Text&gt;
+                  &lt;Text note&gt;April 15, 2016&lt;/Text&gt;
+                &lt;/Body&gt;
+              &lt;/Left&gt;
+            &lt;/CardItem&gt;
+            &lt;CardItem&gt;
+              &lt;Body&gt;
+                &lt;Image source={{uri: 'Image URL'}} style={{height: 200, width: 200, flex: 1}}/&gt;
+                &lt;Text&gt;
+                  //Your text here
+                &lt;/Text&gt;
+              &lt;/Body&gt;
+            &lt;/CardItem&gt;
+            &lt;CardItem&gt;
+              &lt;Left&gt;
+                &lt;Button transparent textStyle={{color: '#87838B'}}&gt;
+                  &lt;Icon name="logo-github" /&gt;
+                  &lt;Text&gt;1,926 stars&lt;/Text&gt;
+                &lt;/Button&gt;
+              &lt;/Left&gt;
+            &lt;/CardItem&gt;
+          &lt;/Card&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cocina-website/docs/component/Button"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/cocina-website/docs/component/Checkbox"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#card-卡片">Card 卡片</a></li><li><a href="#card-头部-and-尾部">Card 头部 and 尾部</a></li><li><a href="#carditem边框">CardItem边框</a></li><li><a href="#carditem按钮">CardItem按钮</a></li><li><a href="#透明卡">透明卡</a></li><li><a href="#卡片列表">卡片列表</a></li><li><a href="#卡片图片">卡片图片</a></li><li><a href="#卡展示">卡展示</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cocina-website/" class="nav-home"><img src="/cocina-website/img/docusaurus.svg" alt="Cocina" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cocina-website/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/cocina-website/docs/en/doc2.html">Guides (or other categories)</a><a href="/cocina-website/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/cocina-website/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cocina-website/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/cocina-website/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>

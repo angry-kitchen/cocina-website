@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>列表 · Cocina</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## List 列表"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="列表 · Cocina"/><meta property="og:type" content="website"/><meta property="og:url" content="https://angry-kitchen.github.io/cocina-website/index.html"/><meta property="og:description" content="## List 列表"/><meta property="og:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><link rel="shortcut icon" href="/cocina-website/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://angry-kitchen.github.io/cocina-website/blog/atom.xml" title="Cocina Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://angry-kitchen.github.io/cocina-website/blog/feed.xml" title="Cocina Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cocina-website/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cocina-website/"><img class="logo" src="/cocina-website/img/docusaurus.svg" alt="Cocina"/><h2 class="headerTitleWithLogo">Cocina</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/cocina-website/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/cocina-website/docs/component" target="_self">UI组件</a></li><li class=""><a href="/cocina-website/docs/doc4" target="_self">API</a></li><li class=""><a href="/cocina-website/help" target="_self">Help</a></li><li class=""><a href="/cocina-website/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>组件</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">起步</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component">集合</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">组件</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Anatomy">结构</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Accordion">手风琴</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/ActionSheet">浮动弹层</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Badge">角标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Button">按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Card">卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Checkbox">复选框</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DatePicker">日期选择</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DeckSwiper">滑动的卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FAB">浮动按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FooterTabs">底部选项卡</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Form">表单</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Header">顶部栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Icon">图标</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cocina-website/docs/component/List">列表</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Picker">选择器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Radio">单选</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/SearchBar">搜索栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Segment">分段器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Spinner">加载器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Thumbnail">缩略图</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Toast">吐司</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Typography">标题大小</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Drawer">抽屉滑动</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Ref">关联组件</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">列表</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="list-列表"></a><a href="#list-列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>List 列表</h2>
+<p>用于指定信息列表的基本组件。</p>
+<p><strong>属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>button</td><td>-</td><td>boolean</td><td>To navigate on click of a list item.</td></tr>
+<tr><td>dataArray</td><td>Array</td><td>user-defined array</td><td>Array of data chunks to render iteratively.</td></tr>
+<tr><td>selected</td><td>true</td><td>boolean</td><td>Highlights the selected item</td></tr>
+<tr><td>noIndent</td><td>true</td><td>boolean</td><td>Removes margin from left Useful incase of setting backgroundColor for ListItem.</td></tr>
+<tr><td>itemDivider</td><td>-</td><td>boolean</td><td>Helps to organize and group the list items.</td></tr>
+<tr><td>itemHeader</td><td>-</td><td>-</td><td>Style the item as header for ListItems</td></tr>
+<tr><td>first</td><td>-</td><td>-</td><td>Adds style of first ListItem</td></tr>
+<tr><td>last</td><td>-</td><td>-</td><td>Adds style of last ListItem</td></tr>
+<tr><td>icon</td><td>-</td><td>-</td><td>To have list styling of icons</td></tr>
+<tr><td>avatar</td><td>-</td><td>-</td><td>Style the list to have Avatars</td></tr>
+<tr><td>thumbnail</td><td>-</td><td>-</td><td>Style the list to have Thumbnails</td></tr>
+<tr><td>renderRow</td><td>Function</td><td>-</td><td>Callback which takes a chunk of data from dataArray and return as a component</td></tr>
+<tr><td>enableEmptySections</td><td>-</td><td>boolean</td><td>Flag indicating whether empty section headers should be rendered</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：不鼓励使用List进行动态列表生成。请改用Flatlist。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="列表分割符"></a><a href="#列表分割符" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列表分割符</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-divider.png" width=256 height=500 /></p>
+<blockquote>
+<p>List Divider组件创建一个列表分隔符，可用于对列表项进行分组。要为列表的任何子元素创建分隔符，请包含itemDividerprop with ListItemcomponent。
+NativeBase的List Divider带有默认样式，可以轻松定制。</p>
+</blockquote>
+<p>代码示例：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListDividerExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">List</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">itemDivider</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>                    
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Aaron Bennet<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Ali Connors<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">itemDivider</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>  
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Bradley Horowitz<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">List</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="列表标题"></a><a href="#列表标题" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列表标题</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-header.png" width=256 height=500 /></p>
+<blockquote>
+<p>List Header组件创建一个列表标题，可用于对列表项进行分组。要为列表的任何子元素创建标题，请包含itemHeaderprop with ListItemcomponent。NativeBase的List Header带有默认样式，可以轻松定制。</p>
+</blockquote>
+<p>代码示例：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListHeaderExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">List</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">itemHeader</span> <span class="hljs-attr">first</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>COMEDY<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> &gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Hangover<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">last</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Cop Out<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">itemHeader</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>ACTION<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Terminator Genesis<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">List</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="listitem已选中"></a><a href="#listitem已选中" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ListItem已选中</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-selected.png" width=256 height=500 /></p>
+<blockquote>
+<p>ListItem的Selected组件突出显示所选的当前listitem。包括selected道具与ListItem组件。此道具带有默认样式，可轻松定制。</p>
+</blockquote>
+<p>代码示例：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text, Left, Right, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListItemSelectedExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;List&gt;
+            &lt;ListItem selected&gt;
+              &lt;Left&gt;
+                &lt;Text&gt;Simon Mignolet&lt;/Text&gt;
+              &lt;/Left&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem&gt;
+             &lt;Left&gt;
+                &lt;Text&gt;Nathaniel Clyne&lt;/Text&gt;
+              &lt;/Left&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem&gt;
+              &lt;Left&gt;
+                &lt;Text&gt;Dejan Lovren&lt;/Text&gt;
+              &lt;/Left&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+            &lt;/ListItem&gt;
+          &lt;/List&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="listitem-noindent"></a><a href="#listitem-noindent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ListItem NoIndent</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-selected.png" width=256 height=500 /></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text, Left, Right, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListItemNoIndentExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;List&gt;
+            &lt;ListItem noIndent style={{ backgroundColor: "#cde1f9" }}&gt;
+              &lt;Left&gt;
+                &lt;Text&gt;Simon Mignolet&lt;/Text&gt;
+              &lt;/Left&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem &gt;
+             &lt;Left&gt;
+                &lt;Text&gt;Nathaniel Clyne&lt;/Text&gt;
+              &lt;/Left&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+            &lt;/ListItem&gt;
+            &lt;ListItem&gt;
+              &lt;Left&gt;
+                &lt;Text&gt;Dejan Lovren&lt;/Text&gt;
+              &lt;/Left&gt;
+              &lt;Right&gt;
+                &lt;Icon name="arrow-forward" /&gt;
+              &lt;/Right&gt;
+            &lt;/ListItem&gt;
+          &lt;/List&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="列表图标"></a><a href="#列表图标" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列表图标</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-icon.png" width=256 height=500 /></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListIconExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;ListItem icon&gt;
+            &lt;Left&gt;
+              &lt;Button style={{ backgroundColor: "#FF9501" }}&gt;
+                &lt;Icon active name="plane" /&gt;
+              &lt;/Button&gt;
+            &lt;/Left&gt;
+            &lt;Body&gt;
+              &lt;Text&gt;Airplane Mode&lt;/Text&gt;
+            &lt;/Body&gt;
+            &lt;Right&gt;
+              &lt;Switch value={false} /&gt;
+            &lt;/Right&gt;
+          &lt;/ListItem&gt;
+          &lt;ListItem icon&gt;
+            &lt;Left&gt;
+              &lt;Button style={{ backgroundColor: "#007AFF" }}&gt;
+                &lt;Icon active name="wifi" /&gt;
+              &lt;/Button&gt;
+            &lt;/Left&gt;
+            &lt;Body&gt;
+              &lt;Text&gt;Wi-Fi&lt;/Text&gt;
+            &lt;/Body&gt;
+            &lt;Right&gt;
+              &lt;Text&gt;GeekyAnts&lt;/Text&gt;
+              &lt;Icon active name="arrow-forward" /&gt;
+            &lt;/Right&gt;
+          &lt;/ListItem&gt;
+          &lt;ListItem icon&gt;
+            &lt;Left&gt;
+              &lt;Button style={{ backgroundColor: "#007AFF" }}&gt;
+                &lt;Icon active name="bluetooth" /&gt;
+              &lt;/Button&gt;
+            &lt;/Left&gt;
+            &lt;Body&gt;
+              &lt;Text&gt;Bluetooth&lt;/Text&gt;
+            &lt;/Body&gt;
+            &lt;Right&gt;
+              &lt;Text&gt;On&lt;/Text&gt;
+              &lt;Icon active name="arrow-forward" /&gt;
+            &lt;/Right&gt;
+          &lt;/ListItem&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="列表头像"></a><a href="#列表头像" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列表头像</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-avatar.png" width=256 height=500 /></p>
+<blockquote>
+<p>列表头像是中等的，用于显示包含图标和缩略图之间维度的列表项的图像。要创建头像列表，请使用prop <Thumbnail>在<ListItem>组件内嵌套组件avatar。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListAvatarExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">List</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">avatar</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Left</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Thumbnail</span> <span class="hljs-attr">source</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">uri:</span> '<span class="hljs-attr">Image</span> <span class="hljs-attr">URL</span>' }} /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Left</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Kumar Pratik<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">note</span>&gt;</span>Doing what you like will always keep you happy . .<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Body</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Right</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">note</span>&gt;</span>3:43 pm<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Right</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">List</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="列表缩略图"></a><a href="#列表缩略图" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列表缩略图</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-thumbnail.png" width=256 height=500 /></p>
+<blockquote>
+<p>列表缩略图是显示列表项目图像的媒介。要创建缩略图列表，请<Thumbnail>在<ListItem>组件中嵌套具有少量道具和样式的组件。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListThumbnailExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">List</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">thumbnail</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Left</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Thumbnail</span> <span class="hljs-attr">square</span> <span class="hljs-attr">source</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">uri:</span> '<span class="hljs-attr">Image</span> <span class="hljs-attr">URL</span>' }} /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Left</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Body</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Sankhadeep<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">note</span> <span class="hljs-attr">numberOfLines</span>=<span class="hljs-string">{1}</span>&gt;</span>Its time to build a difference . .<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Body</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Right</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">transparent</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>View<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Right</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">List</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="动态列表"></a><a href="#动态列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>动态列表</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-dynamic.png" width=256 height=500 /></p>
+<blockquote>
+<p>设计用于有效表示垂直滚动的变化数据列表的中心方面。最简单的方法是创建一个List dataArray，用一组数据块填充它，并使用该数据块实例化一个ListItem组件，并从一个renderRow回调中获取整个数据数组中的一个块并返回一个可渲染组件。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DynamicListExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">var</span> items = [
+      <span class="hljs-string">'Simon Mignolet'</span>,
+      <span class="hljs-string">'Nathaniel Clyne'</span>,
+      <span class="hljs-string">'Dejan Lovren'</span>,
+      <span class="hljs-string">'Mama Sakho'</span>,
+      <span class="hljs-string">'Emre Can'</span>
+    ];
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">List</span> <span class="hljs-attr">dataArray</span>=<span class="hljs-string">{items}</span>
+            <span class="hljs-attr">renderRow</span>=<span class="hljs-string">{(item)</span> =&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>{item}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+            }&gt;
+          <span class="hljs-tag">&lt;/<span class="hljs-name">List</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="列表分隔符"></a><a href="#列表分隔符" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>列表分隔符</h2>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/list-separator.png" width=256 height=500 /></p>
+<blockquote>
+<p>分隔符组件是列表中通常使用的分隔符，可用于对列表项进行分组。虽然它与List一起使用，但您可以在应用中的任何位置使用它。</p>
+</blockquote>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, List, ListItem, Text, Separator } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListSeparatorExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Separator</span> <span class="hljs-attr">bordered</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>MIDFIELD<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Separator</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Caroline Aaron<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">last</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Lee Allen<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Separator</span> <span class="hljs-attr">bordered</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>MIDFIELD<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Separator</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Caroline Aaron<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span> <span class="hljs-attr">last</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>Lee Allen<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>bordered</td><td>-</td><td>-</td><td>Adds border to top and bottom of the separator</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cocina-website/docs/component/Layout"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/cocina-website/docs/component/Picker"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#list-列表">List 列表</a></li><li><a href="#列表分割符">列表分割符</a></li><li><a href="#列表标题">列表标题</a></li><li><a href="#listitem已选中">ListItem已选中</a></li><li><a href="#listitem-noindent">ListItem NoIndent</a></li><li><a href="#列表图标">列表图标</a></li><li><a href="#列表头像">列表头像</a></li><li><a href="#列表缩略图">列表缩略图</a></li><li><a href="#动态列表">动态列表</a></li><li><a href="#列表分隔符">列表分隔符</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cocina-website/" class="nav-home"><img src="/cocina-website/img/docusaurus.svg" alt="Cocina" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cocina-website/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/cocina-website/docs/en/doc2.html">Guides (or other categories)</a><a href="/cocina-website/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/cocina-website/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cocina-website/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/cocina-website/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>

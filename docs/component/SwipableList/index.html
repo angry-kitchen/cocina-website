@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>滑动listItem · Cocina</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 滑动ListItem"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="滑动listItem · Cocina"/><meta property="og:type" content="website"/><meta property="og:url" content="https://angry-kitchen.github.io/cocina-website/index.html"/><meta property="og:description" content="## 滑动ListItem"/><meta property="og:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><link rel="shortcut icon" href="/cocina-website/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://angry-kitchen.github.io/cocina-website/blog/atom.xml" title="Cocina Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://angry-kitchen.github.io/cocina-website/blog/feed.xml" title="Cocina Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cocina-website/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cocina-website/"><img class="logo" src="/cocina-website/img/docusaurus.svg" alt="Cocina"/><h2 class="headerTitleWithLogo">Cocina</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/cocina-website/docs/doc1" target="_self">Docs</a></li><li class=""><a href="/cocina-website/docs/component" target="_self">UI组件</a></li><li class=""><a href="/cocina-website/docs/doc4" target="_self">API</a></li><li class=""><a href="/cocina-website/help" target="_self">Help</a></li><li class=""><a href="/cocina-website/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">滑动listItem</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="滑动listitem"></a><a href="#滑动listitem" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>滑动ListItem</h2>
+<p>SwipableList是可以滑动打开和关闭的ListItem。处理默认的本机行为，例如在打开其他行时关闭行。</p>
+<p><img src="https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/v2.6.1/screenshots/ios/list-swipe-multiple.gif" width=256 height=500 /></p>
+<p>句法</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { ListView } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Button, Icon, List, ListItem, Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">const</span> datas = [
+  <span class="hljs-string">'Simon Mignolet'</span>,
+  <span class="hljs-string">'Nathaniel Clyne'</span>,
+  <span class="hljs-string">'Dejan Lovren'</span>,
+  <span class="hljs-string">'Mama Sakho'</span>,
+  <span class="hljs-string">'Alberto Moreno'</span>,
+  <span class="hljs-string">'Emre Can'</span>,
+  <span class="hljs-string">'Joe Allen'</span>,
+  <span class="hljs-string">'Phil Coutinho'</span>,
+];
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SwipeableListExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.ds = <span class="hljs-keyword">new</span> ListView.DataSource({ <span class="hljs-attr">rowHasChanged</span>: <span class="hljs-function">(<span class="hljs-params">r1, r2</span>) =&gt;</span> r1 !== r2 });
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">basic</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">listViewData</span>: datas,
+    };
+  }
+  deleteRow(secId, rowId, rowMap) {
+    rowMap[<span class="hljs-string">`<span class="hljs-subst">${secId}</span><span class="hljs-subst">${rowId}</span>`</span>].props.closeRow();
+    <span class="hljs-keyword">const</span> newData = [...this.state.listViewData];
+    newData.splice(rowId, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">listViewData</span>: newData });
+  }
+  render() {
+    <span class="hljs-keyword">const</span> ds = <span class="hljs-keyword">new</span> ListView.DataSource({ <span class="hljs-attr">rowHasChanged</span>: <span class="hljs-function">(<span class="hljs-params">r1, r2</span>) =&gt;</span> r1 !== r2 });
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;List
+            leftOpenValue={75}
+            rightOpenValue={-75}
+            dataSource={this.ds.cloneWithRows(this.state.listViewData)}
+            renderRow={data =&gt;
+              &lt;ListItem&gt;
+                &lt;Text&gt; {data} &lt;/Text&gt;
+              &lt;/ListItem&gt;}
+            renderLeftHiddenRow={data =&gt;
+              &lt;Button full onPress={() =&gt; alert(data)}&gt;
+                &lt;Icon active name="information-circle" /&gt;
+              &lt;/Button&gt;}
+            renderRightHiddenRow={(data, secId, rowId, rowMap) =&gt;
+              &lt;Button full danger onPress={_ =&gt; this.deleteRow(secId, rowId, rowMap)}&gt;
+                &lt;Icon active name="trash" /&gt;
+              &lt;/Button&gt;}
+          /&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<p><strong>属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>dataSource</td><td>-</td><td>user defined object</td><td>data chunks to render iteratively</td></tr>
+<tr><td>renderRow</td><td>-</td><td>Function</td><td>Callback which takes a chunk of data from dataSource and returns as a body component, which is visible.</td></tr>
+<tr><td>renderLeftHiddenRow</td><td>-</td><td>Function</td><td>Callback which takes a chunk of data from dataSource and returns as a left component, which is hidden.</td></tr>
+<tr><td>renderRighHiddenRow</td><td>-</td><td>Function</td><td>Callback which takes a chunk of data from dataSource and returns as a right component, which is hidden.</td></tr>
+<tr><td>leftOpenValue</td><td>-</td><td>number</td><td>TranslateX value for opening the row to the left (Positive Value)</td></tr>
+<tr><td>rightOpenValue</td><td>-</td><td>number</td><td>TranslateX value for opening the row to the right (Negative Value)</td></tr>
+<tr><td>closeOnRowBeginSwipe</td><td>false</td><td>boolean</td><td>Open row be closed as soon as a row begin to swipe open swipeToOpenPercent    50% %   Swipe percent of left/right component's width to trigger the row opening</td></tr>
+<tr><td>disableLeftSwipe</td><td>false</td><td>boolean</td><td>Disable ability to swipe the row left</td></tr>
+<tr><td>disableRightSwipe</td><td>false</td><td>boolean</td><td>Disable ability to swipe the row right</td></tr>
+<tr><td>onRowOpen, onRowClose</td><td>-</td><td>Function</td><td>Callback function which triggers when a swipe row is animating open/close</td></tr>
+<tr><td>onRowDidOpen, onRowDidClose</td><td>-</td><td>Function</td><td>Callback function which triggers when a swipe row has animated open/close</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="swiperow"></a><a href="#swiperow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SwipeRow</h2>
+<p>Single Swipable ListItem（外部列表）</p>
+<p><img src="https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/v2.6.1/screenshots/ios/list-swipe-single-row.gif" width=256 height=500 /></p>
+<p>句法</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, SwipeRow, View, Text, Icon, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+​<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SwipeRowExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content scrollEnabled={false}&gt;
+          &lt;SwipeRow
+            leftOpenValue={75}
+            rightOpenValue={-75}
+            left={
+              &lt;Button success onPress={() =&gt; alert('Add')}&gt;
+                &lt;Icon active name="add" /&gt;
+              &lt;/Button&gt;
+            }
+            body={
+              &lt;View&gt;
+                &lt;Text&gt;SwipeRow Body Text&lt;/Text&gt;
+              &lt;/View&gt;
+            }
+            right={
+              &lt;Button danger onPress={() =&gt; alert('Trash')}&gt;
+                &lt;Icon active name="trash" /&gt;
+              &lt;/Button&gt;
+            }
+          /&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<p><strong>属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>body</td><td>-</td><td>-</td><td>Native Base or React Native component(Visible Component).</td></tr>
+<tr><td>left</td><td>-</td><td>-</td><td>Native Base or React Native component(Left hidden Component).</td></tr>
+<tr><td>right</td><td>-</td><td>-</td><td>Native Base or React Native component(Right hidden Component).</td></tr>
+<tr><td>leftOpenValue</td><td>-</td><td>number</td><td>TranslateX value for opening the row to the left (Positive Value)</td></tr>
+<tr><td>rightOpenValue</td><td>-</td><td>number</td><td>TranslateX value for opening the row to the right (Negative Value)</td></tr>
+<tr><td>stopLeftSwipe</td><td>-</td><td>number</td><td>TranslateX value to stop the row to the swipe left (Positive number)</td></tr>
+<tr><td>stopRightSwipe</td><td>-</td><td>number</td><td>TranslateX value to stop the row to the swipe left (Negative number)</td></tr>
+<tr><td>swipeToOpenPercent</td><td>50%</td><td>%</td><td>Swipe percent of left/right component's width to trigger the row opening</td></tr>
+<tr><td>disableLeftSwipe</td><td>false</td><td>boolean</td><td>Disable ability to swipe the row left</td></tr>
+<tr><td>disableRightSwipe</td><td>false</td><td>boolean</td><td>Disable ability to swipe the row right</td></tr>
+<tr><td>onRowOpen, onRowClose</td><td>-</td><td>Function</td><td>Callback function which triggers when a swipe row is animating open/close</td></tr>
+<tr><td>style</td><td>-</td><td>style</td><td>object</td><td>Style body</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#滑动listitem">滑动ListItem</a></li><li><a href="#swiperow">SwipeRow</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cocina-website/" class="nav-home"><img src="/cocina-website/img/docusaurus.svg" alt="Cocina" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cocina-website/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/cocina-website/docs/en/doc2.html">Guides (or other categories)</a><a href="/cocina-website/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/cocina-website/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cocina-website/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/cocina-website/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>

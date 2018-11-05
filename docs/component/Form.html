@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>表单 · Cocina</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 表单Form"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="表单 · Cocina"/><meta property="og:type" content="website"/><meta property="og:url" content="https://angry-kitchen.github.io/cocina-website/index.html"/><meta property="og:description" content="## 表单Form"/><meta property="og:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><link rel="shortcut icon" href="/cocina-website/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://angry-kitchen.github.io/cocina-website/blog/atom.xml" title="Cocina Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://angry-kitchen.github.io/cocina-website/blog/feed.xml" title="Cocina Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cocina-website/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cocina-website/"><img class="logo" src="/cocina-website/img/docusaurus.svg" alt="Cocina"/><h2 class="headerTitleWithLogo">Cocina</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/cocina-website/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/cocina-website/docs/component" target="_self">UI组件</a></li><li class=""><a href="/cocina-website/docs/doc4" target="_self">API</a></li><li class=""><a href="/cocina-website/help" target="_self">Help</a></li><li class=""><a href="/cocina-website/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>组件</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">起步</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component">集合</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">组件</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Anatomy">结构</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Accordion">手风琴</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/ActionSheet">浮动弹层</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Badge">角标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Button">按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Card">卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Checkbox">复选框</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DatePicker">日期选择</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DeckSwiper">滑动的卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FAB">浮动按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FooterTabs">底部选项卡</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cocina-website/docs/component/Form">表单</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Header">顶部栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Icon">图标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/List">列表</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Picker">选择器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Radio">单选</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/SearchBar">搜索栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Segment">分段器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Spinner">加载器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Thumbnail">缩略图</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Toast">吐司</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Typography">标题大小</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Drawer">抽屉滑动</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Ref">关联组件</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">表单</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="表单form"></a><a href="#表单form" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>表单Form</h2>
+<p>NativeBase利用它List来设计包含一组相关输入组件的表单。包括NativeBase组件的任意组合以组成表单。
+Input是一个构建在React Native之上的NativeBase组件TextInput。用于通过键盘将文本输入应用程序的基础组件。应用特定样式的项目组件包装器。</p>
+<p>道具为多个功能提供可配置性，例如自动更正，自动大写，占位符文本和不同的键盘类型，例如数字小键盘。
+提供遵循每个平台的样式和交互指南的许多属性，以便用户可以直观地进行交互。</p>
+<p><strong>属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>fixedLabel</td><td>true</td><td>boolean</td><td>Label is fixed to the left of Input and does not hide when text is entered.</td></tr>
+<tr><td>floatingLabel</td><td>true</td><td>boolean</td><td>Label that animates upward when input is selected and animates downward when input is erased.</td></tr>
+<tr><td>inlineLabel</td><td>-</td><td>boolean</td><td>Label placed to the left of input element and does not hide when text is entered. This can also be used along with placeholder.</td></tr>
+<tr><td>stackedLabel</td><td>-</td><td>-</td><td>Places the label on top of input element which appears like a stack. This can also be used along with placeholder.</td></tr>
+<tr><td>bordered</td><td>-</td><td>-</td><td>Includes border with the textbox</td></tr>
+<tr><td>rounded</td><td>-</td><td>-</td><td>Includes rounded border with the textbox.</td></tr>
+<tr><td>regular</td><td>-</td><td>-</td><td>Includes rectangluar border with the textbox.</td></tr>
+<tr><td>underline</td><td>true</td><td>-</td><td>Includes underline border with the textbox</td></tr>
+<tr><td>disabled</td><td>-</td><td>-</td><td>Disables inputting data</td></tr>
+<tr><td>placeholderLabel</td><td>-</td><td>-</td><td>Renders the same way the TextInput does with the form styling of NativeBase</td></tr>
+<tr><td>placeholder</td><td>-</td><td>-</td><td>String that renders before text input is entered</td></tr>
+<tr><td>last</td><td>-</td><td>-</td><td>Styles last Item of the Form</td></tr>
+<tr><td>error</td><td>-</td><td>-</td><td>Border color of textbox for invalid input</td></tr>
+<tr><td>success</td><td>-</td><td>-</td><td>Border color of textbox for valid input</td></tr>
+<tr><td>picker</td><td>-</td><td>-</td><td>Styles picker field with Input</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意： NativeBase中的表单只是输入的包装，因此没有任何onSubmit功能。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="固定标签"></a><a href="#固定标签" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>固定标签</h2>
+<p>该fixedLabel属性创建一个Input组件，其Label固定在Input的左侧，并且在输入文本时不会隐藏。无论标签的长度如何，输入都在同一位置对齐。它也可以与占位符一起使用。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-fixed.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Form, Item, Input, Label } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FixedLabelExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">fixedLabel</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">fixedLabel</span> <span class="hljs-attr">last</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="内联标签"></a><a href="#内联标签" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>内联标签</h2>
+<p>该inlineLabel属性创建一个Input组件，其Label与Input一致，并且在输入文本时不会隐藏。它也可以与占位符一起使用。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-fixed.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Form, Item, Input, Label } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InlineLabelExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">inlineLabel</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">inlineLabel</span> <span class="hljs-attr">last</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="浮动标签"></a><a href="#浮动标签" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>浮动标签</h2>
+<p>该floatingLabel属性创建一个Input组件，其Label在选择输入时向上动画，在擦除输入时向下动画。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-floating.gif" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Form, Item, Input, Label } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FloatingLabelExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">floatingLabel</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">floatingLabel</span> <span class="hljs-attr">last</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<blockquote>
+<p>When using floatingLabel, use getRef to get the reference of <code>&lt;Input/&gt;</code> component. Always wrap floatingLabel component with <Form/></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="堆叠标签"></a><a href="#堆叠标签" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>堆叠标签</h2>
+<p>该stackedLabel属性创建一个Input组件，将标签放在input元素的顶部，该元素看起来像一个堆栈。这也可以与占位符一起使用。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-stacked.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Form, Item, Input, Label } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StackedLabelExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">stackedLabel</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">stackedLabel</span> <span class="hljs-attr">last</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="选择器输入"></a><a href="#选择器输入" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>选择器输入</h2>
+<p>包含pickerprop <Item>以具有选择器类型的输入字段。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-picker.gif" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Form, Item, Picker } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerInputExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected2</span>: <span class="hljs-literal">undefined</span>
+    };
+  }
+  onValueChange2(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected2</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Item picker&gt;
+              &lt;Picker
+                mode="dropdown"
+                iosIcon={&lt;Icon name="ios-arrow-down-outline" /&gt;}
+                style={{ width: undefined }}
+                placeholder="Select your SIM"
+                placeholderStyle={{ color: "#bfc6ea" }}
+                placeholderIconColor="#007aff"
+                selectedValue={this.state.selected2}
+                onValueChange={this.onValueChange2.bind(this)}
+              &gt;
+                &lt;Picker.Item label="Wallet" value="key0" /&gt;
+                &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+                &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+                &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+                &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+              &lt;/Picker&gt;
+            &lt;/Item&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="常规文本框"></a><a href="#常规文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>常规文本框</h2>
+<p>要使用形状为矩形的常规文本框，请包含regularprop Item。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-regular.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Input, Item } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegularTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">regular</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">'Regular Textbox'</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="带下划线的文本框"></a><a href="#带下划线的文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>带下划线的文本框</h2>
+<p>要使用带下划线的文本框，请包含underlineprop Item。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-underline.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Item, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnderlinedTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Item</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Underline Textbox"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="圆形文本框"></a><a href="#圆形文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>圆形文本框</h2>
+<p>要有一个圆形类型边框的文本框，请包含rounded prop Item。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-rounded.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Item, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RoundedTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Item</span> <span class="hljs-attr">rounded</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">'Rounded Textbox'</span>/&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="图标文本框"></a><a href="#图标文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>图标文本框</h2>
+<p>图标可以轻松添加到NativeBase文本框中。为此，请在其中包含一个图标<Item>。
+图标按其定义的顺序呈现Item。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-icon.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Item, Input, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IconTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          // Text input box with icon aligned to the left
+          &lt;Item&gt;
+            &lt;Icon active name='home' /&gt;
+            &lt;Input placeholder='Icon Textbox'/&gt;
+          &lt;/Item&gt;
+          // Text input box with icon aligned to the right
+          &lt;Item&gt;
+            &lt;Input placeholder='Icon Alignment in Textbox'/&gt;
+            &lt;Icon active name='swap' /&gt;
+          &lt;/Item&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="成功输入文本框"></a><a href="#成功输入文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>成功输入文本框</h2>
+<p>要显示包含有效数据的文本框，请包含successprop Item。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-success.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Item, Input, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SuccessInputTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Item success&gt;
+            &lt;Input placeholder='Textbox with Success Input'/&gt;
+            &lt;Icon name='checkmark-circle' /&gt;
+          &lt;/Item&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="错误输入文本框"></a><a href="#错误输入文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>错误输入文本框</h2>
+<p>要显示包含无效数据的文本框，请包含errorprop Item。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-error.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Item, Input, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ErrorInputTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Item error&gt;
+            &lt;Input placeholder='Textbox with Error Input'/&gt;
+            &lt;Icon name='close-circle' /&gt;
+          &lt;/Item&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="禁用文本框"></a><a href="#禁用文本框" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>禁用文本框</h2>
+<p>要限制将数据输入到文本框中，请disabled使用Item和包含prop Input。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-disabled.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Item, Input, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'native-base'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DisabledTextboxExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Item disabled&gt;
+            &lt;Input disabled placeholder='Disabled Textbox'/&gt;
+            &lt;Icon name='information-circle' /&gt;
+          &lt;/Item&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="多行文本"></a><a href="#多行文本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>多行文本</h2>
+<p>要限制将数据输入到文本框中，请disabled使用Item和包含prop Input。</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/input-textarea.png" width=256 height=500 /></p>
+<p>语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Textarea, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextArea</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Header</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Content</span> <span class="hljs-attr">padder</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Textarea</span> <span class="hljs-attr">rowSpan</span>=<span class="hljs-string">{5}</span> <span class="hljs-attr">bordered</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Textarea"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cocina-website/docs/component/FooterTabs"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/cocina-website/docs/component/Header"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#表单form">表单Form</a></li><li><a href="#固定标签">固定标签</a></li><li><a href="#内联标签">内联标签</a></li><li><a href="#浮动标签">浮动标签</a></li><li><a href="#堆叠标签">堆叠标签</a></li><li><a href="#选择器输入">选择器输入</a></li><li><a href="#常规文本框">常规文本框</a></li><li><a href="#带下划线的文本框">带下划线的文本框</a></li><li><a href="#圆形文本框">圆形文本框</a></li><li><a href="#图标文本框">图标文本框</a></li><li><a href="#成功输入文本框">成功输入文本框</a></li><li><a href="#错误输入文本框">错误输入文本框</a></li><li><a href="#禁用文本框">禁用文本框</a></li><li><a href="#多行文本">多行文本</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cocina-website/" class="nav-home"><img src="/cocina-website/img/docusaurus.svg" alt="Cocina" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cocina-website/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/cocina-website/docs/en/doc2.html">Guides (or other categories)</a><a href="/cocina-website/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/cocina-website/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cocina-website/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/cocina-website/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>

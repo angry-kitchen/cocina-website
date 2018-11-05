@@ -1,0 +1,521 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>选择器 · Cocina</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Picker 选择器"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="选择器 · Cocina"/><meta property="og:type" content="website"/><meta property="og:url" content="https://angry-kitchen.github.io/cocina-website/index.html"/><meta property="og:description" content="## Picker 选择器"/><meta property="og:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://angry-kitchen.github.io/cocina-website/img/docusaurus.png"/><link rel="shortcut icon" href="/cocina-website/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://angry-kitchen.github.io/cocina-website/blog/atom.xml" title="Cocina Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://angry-kitchen.github.io/cocina-website/blog/feed.xml" title="Cocina Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cocina-website/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cocina-website/"><img class="logo" src="/cocina-website/img/docusaurus.svg" alt="Cocina"/><h2 class="headerTitleWithLogo">Cocina</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/cocina-website/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/cocina-website/docs/component" target="_self">UI组件</a></li><li class=""><a href="/cocina-website/docs/doc4" target="_self">API</a></li><li class=""><a href="/cocina-website/help" target="_self">Help</a></li><li class=""><a href="/cocina-website/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>组件</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">起步</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component">集合</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">组件</h3><ul><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Anatomy">结构</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Accordion">手风琴</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/ActionSheet">浮动弹层</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Badge">角标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Button">按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Card">卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Checkbox">复选框</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DatePicker">日期选择</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/DeckSwiper">滑动的卡片</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FAB">浮动按钮</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/FooterTabs">底部选项卡</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Form">表单</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Header">顶部栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Icon">图标</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/List">列表</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cocina-website/docs/component/Picker">选择器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Radio">单选</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/SearchBar">搜索栏</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Segment">分段器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Spinner">加载器</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Thumbnail">缩略图</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Toast">吐司</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Typography">标题大小</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Drawer">抽屉滑动</a></li><li class="navListItem"><a class="navItem" href="/cocina-website/docs/component/Ref">关联组件</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">选择器</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="picker-选择器"></a><a href="#picker-选择器" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Picker 选择器</h2>
+<p>在iOS和Android上呈现本机选取器组件</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key1"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              note
+              mode="dropdown"
+              style={{ width: 120 }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<p><strong>属性:</strong></p>
+<table>
+<thead>
+<tr><th>属性</th><th>默认值</th><th>选项</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>renderHeader</td><td>-</td><td>-</td><td>Makes component that appears as header of the Picker, comes with a backAction prop to close the picker.</td></tr>
+<tr><td>headerStyle</td><td>-</td><td>-</td><td>Custom style for header</td></tr>
+<tr><td>iosHeader</td><td>-</td><td>-</td><td>Custom text for the header title</td></tr>
+<tr><td>headerBackButtonText</td><td>-</td><td>-</td><td>Custom text for the header back button</td></tr>
+<tr><td>headerBackButtonTextStyle</td><td>-</td><td>-</td><td>Custom text style for the header back button</td></tr>
+<tr><td>headerTitleStyle</td><td>-</td><td>-</td><td>Custom title style for the header title</td></tr>
+<tr><td>iosIcon</td><td>-</td><td>-</td><td>Icon with picker dropdown</td></tr>
+<tr><td>placeholder</td><td>-</td><td>-</td><td>Placeholder for Picker component</td></tr>
+<tr><td>placeholderStyle</td><td>-</td><td>-</td><td>Custom style for placeholder text (iOS)</td></tr>
+<tr><td>placeholderIconColor</td><td>-</td><td>-</td><td>Set placeholder icon color (iOS)</td></tr>
+<tr><td>itemStyle</td><td>-</td><td>-</td><td>Style of items in Picker</td></tr>
+<tr><td>itemTextStyle</td><td>-</td><td>-</td><td>Text style of item component in Picker</td></tr>
+<tr><td>textStyle</td><td>-</td><td>-</td><td>Text style of header</td></tr>
+<tr><td>supportedOrientations</td><td>-</td><td>Portrait, Landscape, Landscape-left, Landscape-right</td><td>Allows the modal to rotate to any of the specified orientations</td></tr>
+<tr><td>enabled</td><td>-</td><td>boolean</td><td>Enable / disable Picker button</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>样式选择器仅限于表格中提供的样式道具。NativeBase Picker不支持其样式开箱即用。但是，总是可以根据要求设计组件的样式。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="高级选择器-仅限ios"></a><a href="#高级选择器-仅限ios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>高级选择器（仅限iOS）</h2>
+<p>####选择器与图标</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-with-icon.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerWithIcon</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key1"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              iosHeader="Select your SIM"
+              iosIcon={&lt;Icon name="ios-arrow-down-outline" /&gt;}
+              style={{ width: undefined }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+
+</code></pre>
+<p>####选择器与图标样式</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-with-icon-style.png" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerWithIconStyle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key1"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              iosHeader="Select your SIM"
+              iosIcon={&lt;Icon name="arrow-dropdown-circle" style={{ color: "#007aff", fontSize: 25 }} /&gt;}
+              style={{ width: undefined }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+
+</code></pre>
+<p>####占位符选择器</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-with-placeholder.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerPlaceholderExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-literal">undefined</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              iosIcon={&lt;Icon name="ios-arrow-down-outline" /&gt;}
+              placeholder="Select your SIM"
+              placeholderStyle={{ color: "#bfc6ea" }}
+              placeholderIconColor="#007aff"
+              style={{ width: undefined }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+
+</code></pre>
+<p>####占位符选择器（无提示）</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-with-placeholder-without-note.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerPlaceholderw</span>/<span class="hljs-title">oNoteExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-literal">undefined</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              placeholder="Select One"
+              placeholderStyle={{ color: "#2874F0" }}
+              note={false}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+
+</code></pre>
+<p>####选择器文本和项目文本样式</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-text-itemtext-style.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerTextAndItemStyleExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-literal">undefined</span>
+    };
+  }
+  onValueChange(value) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              placeholder="Select your SIM"
+              iosIcon={&lt;Icon name="ios-arrow-down-outline" /&gt;}
+              placeholder="Select your SIM"
+              textStyle={{ color: "#5cb85c" }}
+              itemStyle={{
+                backgroundColor: "#d3d3d3",
+                marginLeft: 0,
+                paddingLeft: 10
+              }}
+              itemTextStyle={{ color: '#788ad2' }}
+              style={{ width: undefined }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container &gt;
+    );
+  }
+}
+</code></pre>
+<p>####自定义后退按钮的选择器</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-custom-back-button.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerCustomBackButtonExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key3"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              iosIcon={&lt;Icon name="ios-arrow-down-outline" /&gt;}
+              headerBackButtonText="Baaack!"
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<p>####自定义标题的选择器</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-custom-header.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Title, Content, Button, Icon, Right, Body, Left, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerCustomHeaderExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key1"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              renderHeader={backAction =&gt;
+                &lt;Header style={{ backgroundColor: "#f44242" }}&gt;
+                  &lt;Left&gt;
+                    &lt;Button transparent onPress={backAction}&gt;
+                      &lt;Icon name="arrow-back" style={{ color: "#fff" }} /&gt;
+                    &lt;/Button&gt;
+                  &lt;/Left&gt;
+                  &lt;Body style={{ flex: 3 }}&gt;
+                    &lt;Title style={{ color: "#fff" }}&gt;Your Header&lt;/Title&gt;
+                  &lt;/Body&gt;
+                  &lt;Right /&gt;
+                &lt;/Header&gt;}
+              mode="dropdown"
+              iosIcon={&lt;Icon name="ios-arrow-down-outline" /&gt;}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<p>####自定义标题样式的选择器</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-custom-header-style.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerCustomHeaderStyleExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key2"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              iosIcon={{Icon name="ios-arrow-down-outline" /&gt;}
+              headerStyle={{ backgroundColor: "#b95dd3" }}
+              headerBackButtonTextStyle={{ color: "#fff" }}
+              headerTitleStyle={{ color: "#fff" }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+<p>####自定义标题样式的选择器</p>
+<p><img src="https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/v2.6.1/screenshots/ios/picker-custom-header-style.gif" width=256 height=500 /></p>
+<p>一般语法：</p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Container, Header, Content, Icon, Picker, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">"native-base"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PickerCustomHeaderStyleExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">selected</span>: <span class="hljs-string">"key2"</span>
+    };
+  }
+  onValueChange(value: string) {
+    <span class="hljs-keyword">this</span>.setState({
+      <span class="hljs-attr">selected</span>: value
+    });
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;Container&gt;
+        &lt;Header /&gt;
+        &lt;Content&gt;
+          &lt;Form&gt;
+            &lt;Picker
+              mode="dropdown"
+              iosIcon={{Icon name="ios-arrow-down-outline" /&gt;}
+              headerStyle={{ backgroundColor: "#b95dd3" }}
+              headerBackButtonTextStyle={{ color: "#fff" }}
+              headerTitleStyle={{ color: "#fff" }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            &gt;
+              &lt;Picker.Item label="Wallet" value="key0" /&gt;
+              &lt;Picker.Item label="ATM Card" value="key1" /&gt;
+              &lt;Picker.Item label="Debit Card" value="key2" /&gt;
+              &lt;Picker.Item label="Credit Card" value="key3" /&gt;
+              &lt;Picker.Item label="Net Banking" value="key4" /&gt;
+            &lt;/Picker&gt;
+          &lt;/Form&gt;
+        &lt;/Content&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cocina-website/docs/component/List"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/cocina-website/docs/component/Radio"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav docOnPageNav"><ul class="toc-headings"><li><a href="#picker-选择器">Picker 选择器</a></li><li><a href="#高级选择器-仅限ios">高级选择器（仅限iOS）</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cocina-website/" class="nav-home"><img src="/cocina-website/img/docusaurus.svg" alt="Cocina" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cocina-website/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/cocina-website/docs/en/doc2.html">Guides (or other categories)</a><a href="/cocina-website/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/cocina-website/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cocina-website/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/cocina-website/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>
