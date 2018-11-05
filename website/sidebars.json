@@ -8,6 +8,36 @@
     "First Category": ["doc4", "doc5"]
   },
   "UI": {
-    "起步": ["component"]
+    "起步": ["component"],
+    "组件": [
+      "component/Anatomy",
+      "component/Accordion",
+      "component/ActionSheet",
+      "component/Badge",
+      "component/Button",
+      "component/Card",
+      "component/Checkbox",
+      "component/DatePicker",
+      "component/DeckSwiper",
+      "component/FAB",
+      "component/FooterTabs",
+      "component/Form",
+      "component/Header",
+      "component/Icon",
+      "component/Layout",
+      "component/List",
+      "component/Picker",
+      "component/Radio",
+      "component/SearchBar",
+      "component/Segment",
+      "component/Spinner",
+      "component/SwipeableList",
+      "component/Tabs",
+      "component/Thumbnail",
+      "component/Toast",
+      "component/Typography",
+      "component/Drawer",
+      "component/Ref"
+    ]
   }
 }
