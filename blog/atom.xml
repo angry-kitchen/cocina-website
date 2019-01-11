@@ -2,61 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://angry-kitchen.github.io/cocina-website/blog</id>
     <title>Cocina Blog</title>
-    <updated>2017-10-24T06:00:00Z</updated>
+    <updated>2019-01-11T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://angry-kitchen.github.io/cocina-website/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Cocina news and events.</subtitle>
     <logo>https://angry-kitchen.github.io/cocina-website/img/docusaurus.svg</logo>
-    <rights>Copyright © 2018 Your Name or Your Company Name</rights>
+    <rights>Copyright © 2019 Your Name or Your Company Name</rights>
     <entry>
-        <title type="html"><![CDATA[New Version 1.0.0]]></title>
-        <id>https://angry-kitchen.github.io/cocina-website/blog/2017/10/24/new-version-1.0.0.html</id>
-        <link href="https://angry-kitchen.github.io/cocina-website/blog/2017/10/24/new-version-1.0.0.html">
+        <title type="html"><![CDATA[移动端ReactNative技术架构介绍]]></title>
+        <id>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeInfo.html</id>
+        <link href="https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeInfo.html">
         </link>
-        <updated>2017-10-24T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>This blog post will test file name parsing issues when periods are present.</p> ]]></summary>
-        <author>
-            <name>Eric Nakagawa</name>
-            <uri>http://twitter.com/ericnakagawa</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Adding RSS Support]]></title>
-        <id>https://angry-kitchen.github.io/cocina-website/blog/2017/09/26/adding-rss.html</id>
-        <link href="https://angry-kitchen.github.io/cocina-website/blog/2017/09/26/adding-rss.html">
-        </link>
-        <updated>2017-09-26T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>This is a test post.</p> <p>A whole bunch of other information.</p> ]]></summary>
-        <author>
-            <name>Eric Nakagawa</name>
-            <uri>http://twitter.com/ericnakagawa</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Adding RSS Support - RSS Truncation Test]]></title>
-        <id>https://angry-kitchen.github.io/cocina-website/blog/2017/09/25/testing-rss.html</id>
-        <link href="https://angry-kitchen.github.io/cocina-website/blog/2017/09/25/testing-rss.html">
-        </link>
-        <updated>2017-09-25T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</p>
-<p>This should be truncated.</p>
+        <updated>2019-01-11T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<!-- ![rn](https://img-blog.csdn.net/20151001111315780) 显示图片链接-->
+<!-- 基本语法网站 https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/markdown-basics?id=%E9%93%BE%E6%8E%A5 -->
+<p>React Native 让开发者使用 JavaScript 和 React 编写应用，利用相同的核心代码就可以创建 iOS 和 Android 跨平台的原生应用，React Native 的宗旨是，学习一次，高效编写跨平台原生应用。<a href="https://facebook.github.io/react-native/">ReactNative官网</a></p>
 ]]></summary>
         <author>
-            <name>Eric Nakagawa</name>
-            <uri>http://twitter.com/ericnakagawa</uri>
+            <name>冯利</name>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[New Blog Post]]></title>
-        <id>https://angry-kitchen.github.io/cocina-website/blog/2017/04/10/blog-post-two.html</id>
-        <link href="https://angry-kitchen.github.io/cocina-website/blog/2017/04/10/blog-post-two.html">
+        <title type="html"><![CDATA[ReactNative上架IOS]]></title>
+        <id>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeDisplayIOS.html</id>
+        <link href="https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeDisplayIOS.html">
         </link>
-        <updated>2017-04-10T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.</p>
+        <updated>2019-01-11T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>This blog post will test file name parsing issues when periods are present.
+This blog post will test file name parsing issues when periods are present.
+This blog post will test file name parsing issues when periods are present.</p>
 ]]></summary>
         <author>
-            <name>Blog Author</name>
-            <uri>http://twitter.com/</uri>
+            <name>冯利</name>
         </author>
     </entry>
     <entry>

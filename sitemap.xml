@@ -3,10 +3,8 @@
 <url> <loc>https://angry-kitchen.github.io/cocina-website/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://angry-kitchen.github.io/cocina-website/en/help" /> </url>
 <url> <loc>https://angry-kitchen.github.io/cocina-website/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://angry-kitchen.github.io/cocina-website/en/index" /> </url>
 <url> <loc>https://angry-kitchen.github.io/cocina-website/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://angry-kitchen.github.io/cocina-website/en/users" /> </url>
-<url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2017/10/24/new-version-1.0.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2017/09/26/adding-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2017/09/25/testing-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeInfo</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeDisplayIOS</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://angry-kitchen.github.io/cocina-website/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://angry-kitchen.github.io/cocina-website/docs/component</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://angry-kitchen.github.io/cocina-website/docs/component" /> </url>
 <url> <loc>https://angry-kitchen.github.io/cocina-website/docs/component/Accordion</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://angry-kitchen.github.io/cocina-website/docs/component/Accordion" /> </url>

@@ -4,7 +4,7 @@
         <title>Cocina Blog</title>
         <link>https://angry-kitchen.github.io/cocina-website/blog</link>
         <description>The best place to stay up-to-date with the latest Cocina news and events.</description>
-        <lastBuildDate>Tue, 24 Oct 2017 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 11 Jan 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,36 +12,25 @@
             <url>https://angry-kitchen.github.io/cocina-website/img/docusaurus.svg</url>
             <link>https://angry-kitchen.github.io/cocina-website/blog</link>
         </image>
-        <copyright>Copyright © 2018 Your Name or Your Company Name</copyright>
+        <copyright>Copyright © 2019 Your Name or Your Company Name</copyright>
         <item>
-            <title><![CDATA[New Version 1.0.0]]></title>
-            <link>https://angry-kitchen.github.io/cocina-website/blog/2017/10/24/new-version-1.0.0.html</link>
-            <guid>https://angry-kitchen.github.io/cocina-website/blog/2017/10/24/new-version-1.0.0.html</guid>
-            <pubDate>Tue, 24 Oct 2017 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>This blog post will test file name parsing issues when periods are present.</p> ]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Adding RSS Support]]></title>
-            <link>https://angry-kitchen.github.io/cocina-website/blog/2017/09/26/adding-rss.html</link>
-            <guid>https://angry-kitchen.github.io/cocina-website/blog/2017/09/26/adding-rss.html</guid>
-            <pubDate>Tue, 26 Sep 2017 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>This is a test post.</p> <p>A whole bunch of other information.</p> ]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Adding RSS Support - RSS Truncation Test]]></title>
-            <link>https://angry-kitchen.github.io/cocina-website/blog/2017/09/25/testing-rss.html</link>
-            <guid>https://angry-kitchen.github.io/cocina-website/blog/2017/09/25/testing-rss.html</guid>
-            <pubDate>Mon, 25 Sep 2017 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</p>
-<p>This should be truncated.</p>
+            <title><![CDATA[移动端ReactNative技术架构介绍]]></title>
+            <link>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeInfo.html</link>
+            <guid>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeInfo.html</guid>
+            <pubDate>Fri, 11 Jan 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<!-- ![rn](https://img-blog.csdn.net/20151001111315780) 显示图片链接-->
+<!-- 基本语法网站 https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/markdown-basics?id=%E9%93%BE%E6%8E%A5 -->
+<p>React Native 让开发者使用 JavaScript 和 React 编写应用，利用相同的核心代码就可以创建 iOS 和 Android 跨平台的原生应用，React Native 的宗旨是，学习一次，高效编写跨平台原生应用。<a href="https://facebook.github.io/react-native/">ReactNative官网</a></p>
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[New Blog Post]]></title>
-            <link>https://angry-kitchen.github.io/cocina-website/blog/2017/04/10/blog-post-two.html</link>
-            <guid>https://angry-kitchen.github.io/cocina-website/blog/2017/04/10/blog-post-two.html</guid>
-            <pubDate>Mon, 10 Apr 2017 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.</p>
+            <title><![CDATA[ReactNative上架IOS]]></title>
+            <link>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeDisplayIOS.html</link>
+            <guid>https://angry-kitchen.github.io/cocina-website/blog/2019/01/11/ReactNativeDisplayIOS.html</guid>
+            <pubDate>Fri, 11 Jan 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>This blog post will test file name parsing issues when periods are present.
+This blog post will test file name parsing issues when periods are present.
+This blog post will test file name parsing issues when periods are present.</p>
 ]]></description>
         </item>
         <item>
